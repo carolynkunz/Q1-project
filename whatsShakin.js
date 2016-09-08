@@ -10,7 +10,7 @@
   function generateDrink(event){
     liquorType = event.target.id;
     var $xhr = $.getJSON(`http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${liquorType}`);
-    window.scrollTo(0,525);
+     window.scrollTo(0,525);
 
     $xhr.done(function(data) {
       if ($xhr.status !== 200) {
