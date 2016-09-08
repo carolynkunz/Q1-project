@@ -1,0 +1,29 @@
+html {
+   font-family: 'Raleway', sans-serif;
+   color: #F4F7F5;
+   background-color: #474345
+ }
+
+.nav-wrapper{
+  background-color: #474345;
+}
+
+#title{
+  font-size: 20px;
+  padding-left: 10px;
+}
+
+
+.card-reveal{
+  color: #000000;
+  padding: 2px;
+  background-color: #F4F7F5;
+}
+
+.cardIngredients{
+  padding: 5px;
+}
+
+.cardRecipe{
+  padding: 5px;
+}
