@@ -1,0 +1,22 @@
+html {
+   font-family: 'Raleway', sans-serif;
+   color: #F4F7F5;
+   background-color: #474345;
+ }
+
+.nav-wrapper{
+  background-color: #474345;
+}
+
+.listTitle{
+  border-bottom: 1.5px solid #F4F7F5;
+}
+
+#title{
+  font-size: 20px;
+  padding-left: 10px;
+}
+
+img{
+  height: 200px;
+}
