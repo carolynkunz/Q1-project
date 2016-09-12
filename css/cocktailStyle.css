@@ -9,12 +9,8 @@ html {
 }
 
 #title{
-  font-size: 30px;
+  font-size: 20px;
   padding-left: 10px;
-}
-
-nav ul a{
-  font-size: 25px;
 }
 
 .card-reveal{
@@ -25,12 +21,4 @@ nav ul a{
 
 .cardIngredients{
   padding: 5px;
-}
-
-.cardRecipe{
-  padding: 5px;
-}
-
-#cardContent1{
-  height: 50px;
 }
