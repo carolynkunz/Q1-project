@@ -77,17 +77,3 @@ html {
 #homeBarButton{
   background-color: #FF5E5B;
 }
-
-body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
-
-main {
-  flex: 1 0 auto;
-}
-
-/*.page-footer{
-  height: 100px;
-}*/
