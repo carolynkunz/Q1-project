@@ -67,6 +67,8 @@
     $('#strRecipe').html('');
     $('#drinkName').html('');
   }
+
   $dropdown1.on('click', generateDrink);
   $dropdown2.on('click', generateDrink);
+
 })();
