@@ -3,33 +3,69 @@ html {
    color: #F4F7F5;
    background-color: #474345;
  }
+ #title{
+   font-size: 20px;
+   padding-left: 10px;
+ }
+
+ #homeHeader{
+   background-image: url("https://hd.unsplash.com/photo-1470337458703-46ad1756a187");
+   background-size: cover;
+   height: 550px;
+ }
+
+ #mainText{
+   font-size: 28px;
+   line-height: 36px;
+ }
+
+ #resultsHeader{
+   height:100px;
+ }
+
+ #resultsMain,
+ #lower{
+   background-color: #474345;
+ }
+
+ #dropdown1 li,
+ #dropdown2 li{
+   background-color: #D1D1D1;
+   color: #F4F7F5
+ }
+
+ #dropdown1 li a,
+ #dropdown2 li a{
+   color: #08090A;
+ }
+
+ #dropdown1:hover,
+ #dropdown2:hover{
+   background-color: #FF5E5B;
+ }
+
+ #lowerButton{
+   padding-top: 20px;
+   padding-bottom: 10px;
+ }
+
+ #resultsHeader{
+   padding-top: 30px;
+   height: 100px;
+ }
+ #tableContainer{
+   height: 50px;
+   background-color: #474345;
+ }
+
+ #classicCocktailsButton,
+ #homeBarButton{
+   background-color: #FF5E5B;
+ }
+
+
 
 .nav-wrapper{
-  background-color: #474345;
-}
-
-#title{
-  font-size: 20px;
-  padding-left: 10px;
-}
-
-#homeHeader{
-  background-image: url("https://hd.unsplash.com/photo-1470337458703-46ad1756a187");
-  background-size: cover;
-  height: 550px;
-}
-
-#mainText{
-  font-size: 28px;
-  line-height: 36px;
-}
-
-#resultsHeader{
-  height:100px;
-}
-
-#resultsMain,
-#lower{
   background-color: #474345;
 }
 
@@ -45,49 +81,3 @@ html {
 .dropdown-button:hover{
   background-color: #FF5E5B;
 }
-
-#dropdown1 li{
-  background-color: #D1D1D1;
-  color: #F4F7F5
-}
-
-#dropdown1 li a{
-  color: #08090A;
-}
-
-#dropdown1:hover{
-  background-color: #FF5E5B;
-}
-
-#lowerButton{
-  padding-top: 20px;
-  padding-bottom: 10px;
-}
-
-#resultsHeader{
-  padding-top: 30px;
-  height: 100px;
-}
-#tableContainer{
-  height: 50px;
-  background-color: #474345;
-}
-
-#classicCocktailsButton,
-#homeBarButton{
-  background-color: #FF5E5B;
-}
-
-body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
-
-main {
-  flex: 1 0 auto;
-}
-
-/*.page-footer{
-  height: 100px;
-}*/

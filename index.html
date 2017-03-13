@@ -1,15 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <html lang="en">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,500" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="js/whatsShakin.js" type="text/javascript" ></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>What's Shakin?</title>
   </head>
@@ -24,100 +21,107 @@
           <li><a href="classicCocktails.html">Classics</a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
+          <li><a href="index.html">What's Shakin?</a></li>
           <li><a href="homeBar.html">Home Bar</a></li>
           <li><a href="classicCocktails.html">Classics</a></li>
         </ul>
     </div>
   </nav>
 
-  <div class = "header valign-wrapper" id="homeHeader">
-    <div class="container">
-      <div class="row">
-      <div class="col s12 m6" id="main">
-        <h4 id="mainText">Choose from the list of spirits and our bartender
-          will create a cocktail just for you.</h4>
-          <div class="button center-align">
-            <a class='dropdown-button btn' data-activates='dropdown1'>Start Shakin'</a>
-            <ul id='dropdown1' class='dropdown-content'>
-              <li><a href="#tableContainer" id="vodka">Vodka</a></li>
-              <li><a href="#tableContainer" id="gin">Gin</a></li>
-              <li><a href="#tableContainer" id="whiskey">Whiskey</a></li>
-              <li><a href="#tableContainer" id="tequila">Tequila</a></li>
-              <li><a href="#tableContainer" id="rum">Rum</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="main" id="resultsHeader">
-    <div class="container">
-      <div class="col s12 m6">
-        <h4 id="drinkName" class="center-align"></h4>
-      </div>
-    </div>
-
-    <div class="row section scrollspy" id="tableContainer">
+  <main>
+    <div class = "header valign-wrapper" id="homeHeader">
       <div class="container">
-      <div class="col s12 m6">
-        <table id="ingredientTable">
-          <thead>
-            <tr>
-              <th data-field = "ingredient">Ingredient</th>
-              <th data-field = "measurement">Measurement</th>
-            </tr>
-          </thead>
-        </table>
-      </div>
-
-      <div class="col s6" id="drinkRecipe">
-        <h5>Recipe</h5>
-        <p id="strRecipe"></p>
-      </div>
-    </div>
-
-  <div class="row "id="lower">
-    <div class="container">
-      <div class="row">
-        <div class="col s12">
-          <div class="button center-align" id="lowerButton">
-            <a class='dropdown-button btn' href='results.html' data-activates='dropdown1'>Round Two</a>
+        <div class="row">
+        <div class="col s12 m6" id="main">
+          <h4 id="mainText">Choose from the list of spirits and our bartender
+            will create a cocktail just for you.</h4>
+            <div class="button center-align">
+              <a class='dropdown-button btn' data-activates='dropdown1'>Start Shakin'</a>
               <ul id='dropdown1' class='dropdown-content'>
-                <li><a id="vodka">Vodka</a></li>
-                <li><a id="gin">Gin</a></li>
-                <li><a id="whiskey">Whiskey</a></li>
-                <li><a id="tequila">Tequila</a></li>
-                <li><a id="rum">Rum</a></li>
+                <li><a href="#tableContainer" data-liquor="vodka">Vodka</a></li>
+                <li><a href="#tableContainer" data-liquor="gin">Gin</a></li>
+                <li><a href="#tableContainer" data-liquor="whiskey">Whiskey</a></li>
+                <li><a href="#tableContainer" data-liquor="tequila">Tequila</a></li>
+                <li><a href="#tableContainer" data-liquor="rum">Rum</a></li>
               </ul>
+            </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="col s6 center-align" id="homeBar">
-        <h5>Home Bar Essentials</h5>
-          <a href="homeBar.html" class="btn-floating btn-large waves-effect waves-light" id="homeBarButton"><i class="material-icons">local_drink</i></a>
-            <p>Is your home bar stocked with the essentials? <br />
-            Use our guide to get started with everything you need.</p>
+    <div class="main" id="resultsHeader">
+      <div class="container">
+        <div class="col s12 m6">
+          <h4 id="drinkName" class="center-align"></h4>
+        </div>
       </div>
 
-      <div class="col s6 center-align">
-        <h5>Classic Cocktails</h5>
-          <a href="classicCocktails.html" class="btn-floating btn-large waves-effect waves-light" id="classicCocktailsButton"><i class="material-icons">local_bar</i></a>
-            <p>In the mood for some classy adult beverages? <br />
-            Take a look at our traditional cocktail recipes.</p>
+      <div class="row section scrollspy" id="tableContainer">
+        <div class="container">
+        <div class="col s12 m6">
+          <table id="ingredientTable">
+            <thead>
+              <tr>
+                <th data-field = "ingredient">Ingredient</th>
+                <th data-field = "measurement">Measurement</th>
+              </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+          </table>
+        </div>
+
+        <div class="col s6" id="drinkRecipe">
+          <h5>Recipe</h5>
+          <p id="strRecipe"></p>
+        </div>
+      </div>
+
+    <div class="row" id="lower">
+      <div class="container">
+        <div class="row">
+          <div class="col s12">
+            <div class="button center-align" id="lowerButton">
+              <a class='dropdown-button btn' data-activates='dropdown2'>Round Two</a>
+                <ul id='dropdown2' class='dropdown-content'>
+                  <li><a data-liquor="vodka">Vodka</a></li>
+                  <li><a data-liquor="gin">Gin</a></li>
+                  <li><a data-liquor="whiskey">Whiskey</a></li>
+                  <li><a data-liquor="tequila">Tequila</a></li>
+                  <li><a data-liquor="rum">Rum</a></li>
+                </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s6 center-align" id="homeBar">
+          <h5>Home Bar Essentials</h5>
+            <a href="homeBar.html" class="btn-floating btn-large waves-effect waves-light" id="homeBarButton"><i class="material-icons">local_drink</i></a>
+              <p>Is your home bar stocked with the essentials? <br />
+              Use our guide to get started with everything you need.</p>
+        </div>
+
+        <div class="col s6 center-align">
+          <h5>Classic Cocktails</h5>
+            <a href="classicCocktails.html" class="btn-floating btn-large waves-effect waves-light" id="classicCocktailsButton"><i class="material-icons">local_bar</i></a>
+              <p>In the mood for some classy adult beverages? <br />
+              Take a look at our traditional cocktail recipes.</p>
+        </div>
       </div>
     </div>
-  </div>
-  </div>
-  </div>
+    </div>
+    </div>
+  </main>
 
-  </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
     <script src="js/whatsShakin.js" type="text/javascript" ></script>
-    <script>$(document).ready(function(){ $('.scrollspy').scrollSpy(); });</script>
+    <script>
+      $(document).ready(function(){ $('.scrollspy').scrollSpy(); });
+      $(".button-collapse").sideNav();
+    </script>
   </body>
 </html>

@@ -1,0 +1,25 @@
+{
+  "name": "whatsShakin",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carolynkunz/Q1-project.git"
+  },
+  "keywords": [],
+  "author": "Carolyn Kunz <carolyn.delbeccaro@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carolynkunz/Q1-project/issues"
+  },
+  "homepage": "https://github.com/carolynkunz/Q1-project#readme",
+  "devDependencies": {
+    "eslint": "^3.17.1",
+    "eslint-config-ryansobol": "^10.0.2"
+  }
+}

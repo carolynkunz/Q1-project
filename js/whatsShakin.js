@@ -1,74 +1,72 @@
 (function() {
   'use strict';
 
-  var $dropdown = $('#dropdown1');
-  var liquorType;
-  var ingredients;
-  var drinkName;
-  var $drinkIngredients = $('#drinkIngredients');
+  const $dropdown1 = $('#dropdown1');
+  const $dropdown2 = $('#dropdown2');
 
-  function generateDrink(event){
-    liquorType = event.target.id;
-    var $xhr = $.getJSON(`http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${liquorType}`);
+  let liquorType;
 
- $('.scrollspy').scrollSpy();
+  function generateDrink(event) {
+    liquorType = $(event.target).data('liquor');
+    const $xhr = $.getJSON(`http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${liquorType}`);
 
     $xhr.done(function(data) {
       if ($xhr.status !== 200) {
         return;
       }
 
-      var drinkResults = data.drinks;
-      var randomDrinkNumber = Math.floor((Math.random() * drinkResults.length));
-      var randomDrink = data.drinks[randomDrinkNumber].strDrink;
-      var randomDrinkId = data.drinks[randomDrinkNumber].idDrink;
-      var $drinkName = $('#drinkName');
+      const drinkResults = data.drinks;
+      const randomDrinkNumber = Math.floor((Math.random() * drinkResults.length));
+      const randomDrink = data.drinks[randomDrinkNumber].strDrink;
+      const randomDrinkId = data.drinks[randomDrinkNumber].idDrink;
+      const $drinkName = $('#drinkName');
+
       $drinkName.append(randomDrink);
 
-      var $moreXhr = $.getJSON('http://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=' + randomDrinkId);
-
-      $moreXhr.done(function(data2){
+      $.getJSON('http://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=' + randomDrinkId).done(function(data2) {
         if ($xhr.status !== 200) {
           return;
         }
 
-      var drink = data2.drinks[0];
-      var recipe = data2.drinks[0].strInstructions;
+        const recipe = data2.drinks[0].strInstructions;
+        const $recipe = $('#strRecipe');
 
-      var $recipe = $('#strRecipe');
-      $recipe.append(recipe);
+        $recipe.append(recipe);
 
-      var ingredients = [];
-      for (var n = 1; n <= 15; n++) {
+        const ingredients = [];
 
-      var ingredient = data2.drinks[0]['strIngredient' + n];
-      var measurement = data2.drinks[0]['strMeasure' + n].trim();
+        for (let i = 1; i <= 15; i++) {
+          const ingredient = data2.drinks[0]['strIngredient' + i];
+          const measurement = data2.drinks[0]['strMeasure' + i].trim();
 
-      if (ingredient !== '') {
-        let ingredientObj = {
-          'ingredient': ingredient,
-          'measurement': measurement
-          };
+          if (ingredient !== '') {
+            const ingredientObj = {
+              'ingredient': ingredient,
+              'measurement': measurement
+            };
+
             ingredients.push(ingredientObj);
+          }
         }
+        const $ingredientTable = $('#ingredientTable > tbody');
 
-      var $ingredientTable = $('#ingredientTable');
-        }
-        for (var i = 0; i < ingredients.length; i++) {
-          $ingredientTable.append('<tr><td>' + ingredients[i].ingredient + '</td><td>' + ingredients[i].measurement + '</td></tr>');
-        }
-      })
+        $ingredientTable.empty();
 
-      $moreXhr.fail(function(err) {
+        for (let j = 0; j < ingredients.length; j++) {
+          $ingredientTable.append('<tr><td>' +
+            ingredients[j].ingredient + '</td><td>' +
+            ingredients[j].measurement + '</td></tr>');
+        }
+      }).fail(function(err) {
         console.log(err);
       });
     });
     event.preventDefault();
 
-    $("#ingredientTable > tbody").html("");
-    $("#strRecipe").html("");
-    $("#drinkName").html("");
+    $('#ingredientTable > tbody').html('');
+    $('#strRecipe').html('');
+    $('#drinkName').html('');
   }
-
-  $dropdown.on('click', generateDrink);
+  $dropdown1.on('click', generateDrink);
+  $dropdown2.on('click', generateDrink);
 })();
